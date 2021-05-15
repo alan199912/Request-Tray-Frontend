@@ -1,0 +1,35 @@
+<h1 class="text-center">Bnadeja de solicitudes</h1>
+
+<table class="table mt-5">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User</th>
+      <th scope="col">Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Defaulter</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let user of users">
+    <tr>
+      <th scope="row">{{ user.id }}</th>
+      <td>{{ user.name }}</td>
+      <td>{{ user.date }}</td>
+      <td *ngIf="user.status > 0">
+        {{ user.status === 1 ? "active" : "rejected" }}
+      </td>
+      <td *ngIf="user.status === 0">on hold</td>
+      <td>{{ user.defaulter }}</td>
+      <th scope="col">
+        <button
+          [disabled]="user.status > 0"
+          class="btn btn-primary"
+          (click)="seeRequest(user.id)"
+        >
+          See request
+        </button>
+      </th>
+    </tr>
+  </tbody>
+</table>

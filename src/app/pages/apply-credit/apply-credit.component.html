@@ -1,0 +1,59 @@
+<h1 class="text-center">Request your credit</h1>
+
+<div class="d-flex justify-content-center my-5">
+  <form class="border p-4 w-50" [formGroup]="form" (ngSubmit)="addCredit()">
+    <div class="form-group mt-3">
+      <label for="exampleFormControlInput1">Name</label>
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="ex. Pedro"
+      />
+    </div>
+    <div class="form-group mt-3">
+      <label for="exampleFormControlInput1">Last Name</label>
+      <input
+        formControlName="lastName"
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="ex. Gonzalez"
+      />
+    </div>
+    <div class="form-group mt-3">
+      <label for="exampleFormControlInput1">Salary</label>
+      <input
+        formControlName="salary"
+        type="number"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="ex. 200"
+      />
+    </div>
+    <div class="form-group mt-3">
+      <label for="exampleFormControlInput1">Credit</label>
+      <input
+        formControlName="credit"
+        type="number"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="ex. 500"
+      />
+    </div>
+    <div class="form-group mt-3">
+      <label for="exampleFormControlInput1">Description</label>
+      <input
+        formControlName="creditDescription"
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="ex. i need to buy a house"
+      />
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+      <button class="btn btn-primary" type="submit">Apply for credit</button>
+    </div>
+  </form>
+</div>

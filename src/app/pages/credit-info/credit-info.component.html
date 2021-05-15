@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="card" style="width: 18rem" *ngIf="user">
+    <div class="card-body">
+      <h5 class="card-title text-center">
+        {{ user.name + " " + user.lastName }}
+      </h5>
+      <p class="card-text text-center">
+        {{ user.creditDescription }}
+      </p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Salary - {{ user.salary }}</li>
+        <li class="list-group-item">Credit requested - {{ user.credit }}</li>
+        <li class="list-group-item">indicator - {{ user.indicator }}</li>
+      </ul>
+      <div class="d-flex justify-content-between">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="acceptCredit(user.id)"
+        >
+          Accept
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="denyCredit(user.id)"
+        >
+          Deny
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
